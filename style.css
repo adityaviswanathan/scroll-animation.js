@@ -34,12 +34,8 @@
          url('fonts/gotham-book.svg#GothamBook') format('svg');
 }
 
-body {
-	margin:0;
-	font-family: 'GothamMedium';
-    background-color: #f8f8f8;
-}
-
-.navbar {
-    opacity: 0.9;
+.scr-ani-dot {
+    width: 10px;
+    height: 10px;
+    background: black;
 }

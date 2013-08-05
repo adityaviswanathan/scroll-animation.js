@@ -1,0 +1,13 @@
+body {
+	margin:0;
+	font-family: 'GothamMedium';
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    opacity: 0.9;
+}
+
+.dot-container {
+	margin-top: 100px;
+}
