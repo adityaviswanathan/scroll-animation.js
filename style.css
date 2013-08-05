@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'GothamMedium';
+    src: url('fonts/gotham-medium.eot');
+    src: url('fonts/gotham-medium.eot') format('embedded-opentype'),
+         url('fonts/gotham-medium.woff') format('woff'),
+         url('fonts/gotham-medium.ttf') format('truetype'),
+         url('fonts/gotham-medium.svg#GothamMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'GothamExtraLight';
+    src: url('fonts/gotham-xlight.eot');
+    src: url('fonts/gotham-xlight.eot') format('embedded-opentype'),
+         url('fonts/gotham-xlight.woff') format('woff'),
+         url('fonts/gotham-xlight.ttf') format('truetype'),
+         url('fonts/gotham-xlight.svg#GothamExtraLight') format('svg');
+}
+
+@font-face {
+    font-family: 'GothamLight';
+    src: url('fonts/gotham-light.eot');
+    src: url('fonts/gotham-light.eot') format('embedded-opentype'),
+         url('fonts/gotham-light.woff') format('woff'),
+         url('fonts/gotham-light.ttf') format('truetype'),
+         url('fonts/gotham-light.svg#GothamLight') format('svg');
+}
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url('fonts/gotham-book.eot');
+    src: url('fonts/gotham-book.eot') format('embedded-opentype'),
+         url('fonts/gotham-book.woff') format('woff'),
+         url('fonts/gotham-book.ttf') format('truetype'),
+         url('fonts/gotham-book.svg#GothamBook') format('svg');
+}
+
+body {
+	margin:0;
+	font-family: 'GothamMedium';
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    opacity: 0.9;
+}
