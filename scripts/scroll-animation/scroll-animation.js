@@ -1,36 +1,36 @@
 
+var globalPosition = 0;
 
-function linGrowthRight(classListener, distance, speed, size, color) {
+function linGrowthRight(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of extension, color of unit
 	
+	$('.' + classListener).addClass(classAdd);
+
 	globalPosition = $(window).scrollTop();
 
 	var scrollPositionStart = globalPosition;
 
 	var scrollPositionEnd = scrollPositionStart + (speed * 100);
 
-	var sizeSet = size * 10;
+	var sizeInit = $("." + classListener).width();
+
+	var sizeSet = distance * 10;
 
 	var doubleSizeSet = 2 * sizeSet;
 
-	$( ".scr-ani-dot" ).attr('data-' + scrollPositionStart, "width:" + sizeSet + "px;");
-	$( ".scr-ani-dot" ).attr('data-' + scrollPositionEnd, "width:" + doubleSizeSet + "px;");
+	var unitSize = size * 10;
 
+	$('.' + classListener).css('height', unitSize+'px');
+	$('.' + classListener).css('width', unitSize+'px');
 
-	// $('.' + classListener).data(scrollPositionStart, "width: " + sizeSet + "px;");
-	// $('.' + classListener).data(scrollPositionEnd, "width: " + doubleSizeSet + "px;");
+	$( "." + classAdd).attr('data-' + scrollPositionStart, "width:" + unitSize + "px;");
+	$( "." + classAdd ).attr('data-' + scrollPositionEnd, "width:" + doubleSizeSet + "px;");
+
 }
 
-linGrowthRight('scr-ani-dot', 0, 0.25, 1, '#333333');
+linGrowthRight('scr-ani-dot-1', 'scr-ani-dot-new-1', 5, 0.25, 50, '#333333');
 
-// $('.scr-ani-dot').data('1', 'hello');
+linGrowthRight('scr-ani-dot-2', 'scr-ani-dot-new-2',  1, 0.25, 1, '#333333');
 
-
-// console.log($('.scr-ani-dot').data('1'));
-
-
-
-// $( ".scr-ani-dot" ).attr('data-' + 1, "width: " + 0 + "px;");
-// $( ".scr-ani-dot" ).attr('data-' + 100, "width: " + 0 + "px;");
 
 skrollr.init({ smoothScrolling: true });
 
