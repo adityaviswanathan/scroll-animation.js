@@ -35,19 +35,10 @@
 }
 
 .scr-ani-dot {
-    width: 10px;
-    height: 10px;
     background: black;
 }
 
-.scr-ani-dot-1 {
-    width: 10px;
-    height: 10px;
+.scr-ani-dot-right {
     background: black;
-}
-
-.scr-ani-dot-2 {
-    width: 10px;
-    height: 10px;
-    background: black;
+    float: right;
 }
