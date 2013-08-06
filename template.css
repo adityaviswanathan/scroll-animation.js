@@ -12,3 +12,31 @@ body {
 .dot-container {
 	margin-top: 100px;
 }
+
+.content-title {
+	font-family: 'GothamBook';
+	font-size: 30px;
+	text-align: center;
+	color: #333;
+}
+
+.sub-title {
+	font-family: 'GothamMedium';
+	font-size: 16px;
+	margin: 10px;
+	color: #d5d5d5;
+}
+
+.code-snippet {
+	background: #fff;
+	border: 2px #f2f2f2 solid;
+	border-radius: 4px;
+	font-family: monospace;
+	padding: 10px;
+	box-shadow: 0px 0px 2px #eaeaea;
+	font-size: 12px;
+}
+
+.effect-listen:hover {
+	cursor: default;
+}

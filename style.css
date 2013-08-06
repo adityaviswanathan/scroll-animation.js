@@ -42,3 +42,14 @@
     background: black;
     float: right;
 }
+
+.scr-ani-circle {
+    background: black;
+    border-radius: 50px;
+}
+
+.scr-ani-circle-right {
+    background: black;
+    border-radius: 5000px;
+    float: right;
+}

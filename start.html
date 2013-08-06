@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    <title>scroll-animation.js home</title>
 
     <!-- START DEPENDENCIES -->
 
@@ -52,21 +52,70 @@
 
     <div class="container">
 
-      <div class="dot-container">
+      <div class="dot-container lin-growth">
 
-        <div class="scr-ani-dot-1"></div>
+        <div class="row">
+          <div class="col-lg-12 content-title">Animation</div>
+        </div>
 
-        <br>
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="scr-ani-dot-1"></div>
 
-        <div class="scr-ani-dot-2"></div>
+            <br>
 
-        <br>
+            <div class="scr-ani-dot-2"></div>
 
-        <div class="scr-ani-dot-3"></div>
+            <br>
 
-        <br>
+            <div class="scr-ani-dot-3"></div>
 
-        <div class="scr-ani-dot-4"></div>
+            <br>
+
+            <div class="scr-ani-dot-4"></div>
+          </div>
+
+          <div class="col-lg-5 column-right">
+            <div class="sub-title">linGrowth </div>
+            <div class="code-snippet lin-growth-code-block">
+              &lt;body&gt;
+              <br>
+              <br>
+              //adding four animation start points to DOM
+              <br>
+              <br>
+              <div class="effect-listen effect-1">&lt;div class="scr-ani-dot-1"&gt;&lt;/div&gt;</div>
+              <br>
+              <div class="effect-listen effect-2">&lt;div class="scr-ani-dot-2"&gt;&lt;/div&gt;</div>
+              <br>
+              <div class="effect-listen effect-3">&lt;div class="scr-ani-dot-3"&gt;&lt;/div&gt;</div>
+              <br>
+              <div class="effect-listen effect-4">&lt;div class="scr-ani-dot-4"&gt;&lt;/div&gt;</div>
+              <br>
+              &lt;/body&gt;
+              <br>
+              <br>
+              &lt;script&gt;
+              <br>
+              <br>
+              //animation functions appended to start points
+              <br>
+              <br>
+              <div class="effect-listen effect-1">linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 50, '#ddd');</div>
+              <br>
+              <div class="effect-listen effect-2">linGrowthHorizontal('scr-ani-dot-2', 'scr-ani-dot-right',  0.5, 1, 100, '#333333');</div>
+              <br>
+              <div class="effect-listen effect-3">linGrowthVertical('scr-ani-dot-3', 'scr-ani-circle-right',  1.5, 1, 30, '#009974');</div>
+              <br>
+              <div class="effect-listen effect-4">linGrowthVertical('scr-ani-dot-4', 'scr-ani-dot',  1.5, 1, 30, '#bcd4d4');</div>
+              <br>
+              <br>
+              &lt;/script&gt;
+            </div>
+          </div>
+        </div>
+
+        
 
 
       </div>
@@ -87,4 +136,6 @@
 </body>
 
 <script src="scripts/scroll-animation/scroll-animation.js" type="text/javascript"></script>
+<script src="scripts/template.js" type="text/javascript"></script>
+
 </html>
