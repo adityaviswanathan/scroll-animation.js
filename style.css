@@ -34,11 +34,11 @@
          url('fonts/gotham-book.svg#GothamBook') format('svg');
 }
 
-.scr-ani-dot {
+.scr-ani-square {
     background: black;
 }
 
-.scr-ani-dot-right {
+.scr-ani-square-right {
     background: black;
     float: right;
 }

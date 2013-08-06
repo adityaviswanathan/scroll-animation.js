@@ -40,3 +40,7 @@ body {
 .effect-listen:hover {
 	cursor: default;
 }
+
+.lin-growth-container {
+	margin-top: 50px;
+}

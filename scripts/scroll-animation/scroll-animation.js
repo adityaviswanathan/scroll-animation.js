@@ -15,7 +15,7 @@ function linGrowthHorizontal(classListener, classAdd, size, speed, distance, col
 	$('.' + classListener).css('width', unitSize+'px');
 	$('.' + classListener).css('background-color', color);
 
-	globalPosition = $(window).scrollTop();
+	globalPosition = $('.' + classListener).offset().top - 150;
 
 	var scrollPositionStart = globalPosition;
 
@@ -42,7 +42,7 @@ function linGrowthVertical(classListener, classAdd, size, speed, distance, color
 	$('.' + classListener).css('width', unitSize+'px');
 	$('.' + classListener).css('background-color', color);
 
-	globalPosition = $(window).scrollTop();
+	globalPosition = $('.' + classListener).offset().top - 150;
 
 	var scrollPositionStart = globalPosition;
 
@@ -55,13 +55,43 @@ function linGrowthVertical(classListener, classAdd, size, speed, distance, color
 
 }
 
+function linGrowthScale(classListener, classAdd, size, speed, maxSize, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of scale, color of unit
+	
+	$('.' + classListener).addClass(classAdd);
+
+	var sizeSet = maxSize * 10;
+
+	var doubleSizeSet = 2 * sizeSet;
+
+	var unitSize = size * 10;	
+
+	$('.' + classListener).css('height', unitSize+'px');
+	$('.' + classListener).css('width', unitSize+'px');
+	$('.' + classListener).css('background-color', color);
+
+	globalPosition = $('.' + classListener).offset().top - 150;
+
+	var scrollPositionStart = globalPosition;
+
+	var scrollPositionEnd = scrollPositionStart + (speed * 100);
+
+	var sizeInit = $("." + classListener).width();
+
+	$('.' + classListener).attr('data-' + scrollPositionStart, "height:" + unitSize + "px;");
+	$('.' + classListener).attr('data-' + scrollPositionEnd, "height:" + doubleSizeSet + "px;");
+
+	console.log(globalPosition);
+}
+
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
 
-linGrowthHorizontal('scr-ani-dot-2', 'scr-ani-dot-right',  0.5, 1, 30, '#333333');
+linGrowthHorizontal('scr-ani-dot-2', 'scr-ani-square-right',  0.5, 1, 30, '#333333');
 
 linGrowthVertical('scr-ani-dot-3', 'scr-ani-circle-right',  1.5, 1, 10, '#009974');
 
-linGrowthVertical('scr-ani-dot-4', 'scr-ani-dot',  1.5, 1, 8, '#bcd4d4');
+linGrowthVertical('scr-ani-dot-4', 'scr-ani-square',  1.5, 1, 8, '#bcd4d4');
+
+linGrowthScale('scr-ani-dot-5', 'sqr-ani-square', 1, 1, 5, '#333');
 
 
 skrollr.init({ smoothScrolling: true });
