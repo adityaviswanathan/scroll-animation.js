@@ -2,21 +2,25 @@ REPO README
 
 UNIT DEFAULT STYLES (CSS LIBRARY):
 
-.scr-ani-square { //default unit square
+//default unit square
+.scr-ani-square { 
     background: black;
 }
 
-.scr-ani-square-right { //default unit square, float right
+//default unit square, float right
+.scr-ani-square-right { 
     background: black;
     float: right;
 }
 
-.scr-ani-circle { //default unit circle
+//default unit circle
+.scr-ani-circle { 
     background: black;
     border-radius: 50px;
 }
 
-.scr-ani-circle-right { //default unit circle, float right
+//default unit circle, float right
+.scr-ani-circle-right { 
     background: black;
     border-radius: 5000px;
     float: right;
@@ -24,7 +28,7 @@ UNIT DEFAULT STYLES (CSS LIBRARY):
 
 TO START:
 
-1. linGrowth function
+1. linGrowthHorizontal and linGrowthVertical functions
 
 	a) Initialize with div:
 
@@ -34,9 +38,17 @@ TO START:
 
 		ex. <script>
 
-			//linGrowthRight(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
+			//linGrowthHorizontal(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
 
-			linGrowthRight('test', 'scr-ani-dot', 5, 0.25, 50, '#ddd');
+			linGrowthHorizontal('test', 'scr-ani-dot', 5, 0.25, 50, '#ddd');
+
+			</script>
+
+		ex 2. <script>
+
+			//linGrowthVertical(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
+
+			linGrowthVertical('test', 'scr-ani-dot', 5, 0.25, 50, '#ddd');
 
 			</script>
 
@@ -44,11 +56,26 @@ TO START:
 	
 		ex. <script>
 
-			//linGrowthRight(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
+			//linGrowthHorizontal(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
 
-			linGrowthRight('test', 'scr-ani-dot-right', 5, 0.25, 50, '#ddd');
+			linGrowthHorizontal('test', 'scr-ani-dot-right', 5, 0.25, 50, '#ddd');
 
-			</script>		
+			</script>
 
+2. linGrowthScale function
+	
+	a) Initialize with div:
+
+		ex. <div class="test"></div>
+
+	b) Assign animation parameters to div (in JS):
+
+		ex. <script>
+
+		//linGrowthScale(class to apply settings to, class to create (custom), size of unit, low = fast, length of scale, color of unit)
+
+		linGrowthScale('test', 'scr-ani-circle', 3, 0.25, 4, '#333');
+
+		</script>
 
 
