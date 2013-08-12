@@ -85,6 +85,8 @@ function linGrowthScale(classListener, classAdd, size, speed, maxSize, color) { 
 
 function linTranslateRight(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of translation, color of unit
 
+	$('.' + classListener).css('float', 'left');
+
 	$('.' + classListener).addClass(classAdd);
 
 	var sizeSet = distance * 10;
@@ -95,7 +97,6 @@ function linTranslateRight(classListener, classAdd, size, speed, distance, color
 
 	$('.' + classListener).css('height', unitSize+'px');
 	$('.' + classListener).css('width', unitSize+'px');
-	$('.' + classListener).css('position', 'absolute');
 	$('.' + classListener).css('background-color', color);
 
 	globalPosition = $('.' + classListener).offset().top - 150;
@@ -106,12 +107,14 @@ function linTranslateRight(classListener, classAdd, size, speed, distance, color
 
 	var sizeInit = $("." + classListener).width();
 
-	$('.' + classListener).attr('data-' + scrollPositionStart, "left:15px;");
-	$('.' + classListener).attr('data-' + scrollPositionEnd, "left:" + doubleSizeSet + "px;");
+	$('.' + classListener).attr('data-' + scrollPositionStart, "margin-left:0px;");
+	$('.' + classListener).attr('data-' + scrollPositionEnd, "margin-left:" + doubleSizeSet + "px;");
 }
 
 function linTranslateLeft(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of translation, color of unit
 
+	$('.' + classListener).css('float', 'right');
+
 	$('.' + classListener).addClass(classAdd);
 
 	var sizeSet = distance * 10;
@@ -122,7 +125,6 @@ function linTranslateLeft(classListener, classAdd, size, speed, distance, color)
 
 	$('.' + classListener).css('height', unitSize+'px');
 	$('.' + classListener).css('width', unitSize+'px');
-	$('.' + classListener).css('position', 'absolute');
 	$('.' + classListener).css('background-color', color);
 
 	globalPosition = $('.' + classListener).offset().top - 150;
@@ -133,8 +135,8 @@ function linTranslateLeft(classListener, classAdd, size, speed, distance, color)
 
 	var sizeInit = $("." + classListener).width();
 
-	$('.' + classListener).attr('data-' + scrollPositionStart, "right:15px;");
-	$('.' + classListener).attr('data-' + scrollPositionEnd, "right:" + doubleSizeSet + "px;");
+	$('.' + classListener).attr('data-' + scrollPositionStart, "margin-right:0px;");
+	$('.' + classListener).attr('data-' + scrollPositionEnd, "margin-right:" + doubleSizeSet + "px;");
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
@@ -151,7 +153,7 @@ linGrowthScale('scr-ani-dot-6', 'scr-ani-circle-right', 2, 2, 7, '#333');
 
 linTranslateRight('scr-ani-dot-7', 'scr-ani-circle', 2, 2, 10, '#333');
 
-linTranslateLeft('scr-ani-dot-8', 'scr-ani-square', 1.5, 0.5, 25, '#333');
+linTranslateLeft('scr-ani-dot-8', 'scr-ani-square-right', 1.5, 0.5, 25, '#333');
 
 skrollr.init({ smoothScrolling: true });
 
