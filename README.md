@@ -1,5 +1,27 @@
 REPO README
 
+UNIT DEFAULT STYLES (CSS LIBRARY):
+
+.scr-ani-square { //default unit square
+    background: black;
+}
+
+.scr-ani-square-right { //default unit square, float right
+    background: black;
+    float: right;
+}
+
+.scr-ani-circle { //default unit circle
+    background: black;
+    border-radius: 50px;
+}
+
+.scr-ani-circle-right { //default unit circle, float right
+    background: black;
+    border-radius: 5000px;
+    float: right;
+}
+
 TO START:
 
 1. linGrowth function

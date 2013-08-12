@@ -91,9 +91,9 @@ linGrowthVertical('scr-ani-dot-3', 'scr-ani-circle-right',  1.5, 1, 10, '#009974
 
 linGrowthVertical('scr-ani-dot-4', 'scr-ani-square',  1.5, 1, 8, '#bcd4d4');
 
-linGrowthScale('scr-ani-dot-5', 'sqr-ani-circle', 1, 1, 5, '#ddd');
+linGrowthScale('scr-ani-dot-5', 'scr-ani-square', 1, 1, 5, '#ddd');
 
-linGrowthScale('scr-ani-dot-6', 'sqr-ani-circle', 2, 0.5, 7, '#d8d8d8');
+linGrowthScale('scr-ani-dot-6', 'scr-ani-circle-right', 2, 2, 7, '#333');
 
 
 skrollr.init({ smoothScrolling: true });
