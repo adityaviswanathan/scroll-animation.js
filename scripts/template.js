@@ -8,6 +8,8 @@ var highlightArray
 
 var colorHold;
 
+/* START HOVER EFFECTS FOR CODE SNIPPETS ON SAMPLE HTML PAGE */
+
 $('.effect-listen').hover(function() {
 	console.log('hi');
 	if($(this).hasClass('effect-1')) {
@@ -71,3 +73,5 @@ $('.effect-listen').hover(function() {
 		$('.scr-ani-dot-8').css('background-color', colorHold);
 	}
 });
+
+/* END HOVER EFFECTS FOR CODE SNIPPETS ON SAMPLE HTML PAGE */
