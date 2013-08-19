@@ -8,7 +8,28 @@ var highlightArray
 
 var colorHold;
 
-/* START HOVER EFFECTS FOR CODE SNIPPETS ON SAMPLE HTML PAGE */
+/* START TITLE CHANGER */
+
+window.onscroll = function() {
+	var checker1 = $('.navbar-brand').scrollTop();
+	var current = $(document).scrollTop();
+	
+
+	if(current > 140) {
+		$('.navbar-brand').html('animation');
+		$('.nav li').fadeOut();
+		$('.navbar').css('opacity', '0.6');
+		console.log(current);
+	} else {
+		$('.navbar-brand').html('scroll-animation.js');
+		$('.nav li').fadeIn();
+		$('.navbar').css('opacity', '0.9');
+	}
+}
+
+/* END TITLE CHANGER */
+
+/* START HOVER EFFECTS FOR CODE SNIPPETS */
 
 $('.effect-listen').hover(function() {
 	console.log('hi');
@@ -88,4 +109,5 @@ $('.effect-listen').hover(function() {
 	}
 });
 
-/* END HOVER EFFECTS FOR CODE SNIPPETS ON SAMPLE HTML PAGE */
+/* END HOVER EFFECTS FOR CODE SNIPPETS */
+
