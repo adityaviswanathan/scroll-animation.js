@@ -205,7 +205,7 @@ linGrowthScale('scr-ani-dot-6', 'scr-ani-circle-right', 2, 2, 7, '#333');
 
 linTranslateRight('scr-ani-dot-7', 'scr-ani-circle', 3, 2, 10, '#333');
 
-linTranslateLeft('scr-ani-dot-8', 'scr-ani-square-right', 1, 0.5, 25, '#563D7C');
+linTranslateLeft('scr-ani-dot-8', 'scr-ani-square-right', 1, 0.5, 10, '#563D7C');
 
 linTranslateDown('scr-ani-dot-9', 'scr-ani-circle-right', 2, 1.5, 25, '#ddd');
 
