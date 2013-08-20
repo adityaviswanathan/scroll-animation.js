@@ -191,6 +191,14 @@ function linTranslateUp(classListener, classAdd, size, speed, distance, color) {
 	$('.' + classListener).attr('data-' + scrollPositionEnd, "margin-bottom:" + doubleSizeSet + "px;");
 }
 
+function linRotateClock(classListener, classAdd, size, speed, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, color of unit
+
+}
+
+function linRotateCounter(classListener, classAdd, size, speed, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, color of unit
+
+}
+
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
 
 linGrowthHorizontal('scr-ani-dot-2', 'scr-ani-square-right',  0.5, 1, 30, '#333333');
@@ -207,9 +215,9 @@ linTranslateRight('scr-ani-dot-7', 'scr-ani-circle', 3, 2, 10, '#333');
 
 linTranslateLeft('scr-ani-dot-8', 'scr-ani-square-right', 1, 0.5, 10, '#563D7C');
 
-linTranslateDown('scr-ani-dot-9', 'scr-ani-circle-right', 2, 1.5, 25, '#ddd');
+linTranslateDown('scr-ani-dot-9', 'scr-ani-circle-right', 2, 1.5, 15, '#ddd');
 
-// linTranslateUp('scr-ani-dot-10', 'scr-ani-square', 4, 1.75, 15, '#6b4346');
+// linTranslateUp('scr-ani-dot-10', 'scr-ani-square', 4, 1.75, 30, '#6b4346');
 
 skrollr.init({ smoothScrolling: true });
 

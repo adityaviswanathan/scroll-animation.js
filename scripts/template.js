@@ -73,6 +73,14 @@ $('.effect-listen').hover(function() {
 		colorHold = $('.scr-ani-dot-10').css('background-color');
 		$(this).css('background-color', '#f2f0c9');
 		$('.scr-ani-dot-10').css('background-color', '#f2f0c9');
+	} else if($(this).hasClass('effect-11')) {
+		colorHold = $('.scr-ani-dot-11').css('background-color');
+		$(this).css('background-color', '#f2f0c9');
+		$('.scr-ani-dot-11').css('background-color', '#f2f0c9');
+	} else if($(this).hasClass('effect-12')) {
+		colorHold = $('.scr-ani-dot-12').css('background-color');
+		$(this).css('background-color', '#f2f0c9');
+		$('.scr-ani-dot-12').css('background-color', '#f2f0c9');
 	}
 
 }, function() {
@@ -106,6 +114,12 @@ $('.effect-listen').hover(function() {
 	} else if ($(this).hasClass('effect-10')) { 
 		$(this).css('background-color', '#fff');
 		$('.scr-ani-dot-10').css('background-color', colorHold);
+	} else if ($(this).hasClass('effect-11')) { 
+		$(this).css('background-color', '#fff');
+		$('.scr-ani-dot-11').css('background-color', colorHold);
+	} else if ($(this).hasClass('effect-12')) { 
+		$(this).css('background-color', '#fff');
+		$('.scr-ani-dot-12').css('background-color', colorHold);
 	}
 });
 
