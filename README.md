@@ -72,10 +72,44 @@ TO START:
 
 		ex. <script>
 
-		//linGrowthScale(class to apply settings to, class to create (custom), size of unit, low = fast, length of scale, color of unit)
+			//linGrowthScale(class to apply settings to, class to create (custom), size of unit, low = fast, length of scale, color of unit)
 
-		linGrowthScale('test', 'scr-ani-circle', 3, 0.25, 4, '#333');
+			linGrowthScale('test', 'scr-ani-circle', 3, 0.25, 4, '#333');
 
-		</script>
+			</script>
+
+2. linTranslateRight, linTranslateLeft, and linTranslateDown functions
+	
+	a) Initialize with div:
+
+		ex. <div class="test"></div>
+
+	b) Assign animation parameters to div (in JS):
+
+		ex. <script>
+
+			//linTranslateRight(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
+
+			linTranslateRight('test', 'scr-ani-circle', 3, 2, 10, '#333');
+
+			</script>
+
+		ex 2. <script>
+
+			//linTranslateLeft(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
+
+			//using linTranslateLeft() with scr-ani-square-right to start translation from right side (not necessary)
+
+			linTranslateLeft('test', 'scr-ani-square-right', 1, 0.5, 10, '#563D7C'); 
+
+			</script>
+
+		ex 3. <script>
+
+			//linTranslateDown(class to assign, class to add, size of unit, speed of animation, distance for animation to travel, color of unit)
+
+			linTranslateDown('test', 'scr-ani-square', 1, 0.5, 10, '#563D7C'); 
+
+			</script>			
 
 
