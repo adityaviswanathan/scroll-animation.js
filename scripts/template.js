@@ -19,7 +19,6 @@ window.onscroll = function() {
 		$('.navbar-brand').html('animation');
 		$('.nav li').fadeOut();
 		$('.navbar').css('opacity', '0.6');
-		console.log(current);
 	} else {
 		$('.navbar-brand').html('scroll-animation.js');
 		$('.nav li').fadeIn();

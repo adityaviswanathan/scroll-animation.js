@@ -110,6 +110,30 @@ TO START:
 
 			linTranslateDown('test', 'scr-ani-square', 1, 0.5, 10, '#563D7C'); 
 
-			</script>			
+			</script>
+
+2. linRotateClock and linRotateCounter functions
+	
+	a) Initialize with div:
+
+		ex. <div class="test"></div>
+
+	b) Assign animation parameters to div (in JS):
+
+		ex. <script>
+
+			//linRotateClock(class to assign, class to add, size of unit, speed of animation, color of unit)
+
+			linRotateClock('test', 'scr-ani-circle', 3, 2, '#333');
+
+			</script>
+
+		ex 2. <script>
+
+			//linRotateCounter(class to assign, class to add, size of unit, speed of animation, color of unit)
+
+			linRotateCounter('test', 'scr-ani-circle', 3, 2, '#333');
+
+			</script>					
 
 

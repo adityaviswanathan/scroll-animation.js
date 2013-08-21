@@ -193,10 +193,46 @@ function linTranslateUp(classListener, classAdd, size, speed, distance, color) {
 
 function linRotateClock(classListener, classAdd, size, speed, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, color of unit
 
+	$('.' + classListener).addClass(classAdd);
+
+	var unitSize = size * 10;	
+
+	$('.' + classListener).css('height', unitSize+'px');
+	$('.' + classListener).css('width', unitSize+'px');
+	$('.' + classListener).css('background-color', color);
+
+	globalPosition = $('.' + classListener).offset().top - 150;
+
+	var scrollPositionStart = globalPosition;
+
+	var scrollPositionEnd = scrollPositionStart + (speed * 100);
+
+	var sizeInit = $("." + classListener).width();
+
+	$('.' + classListener).attr('data-' + scrollPositionStart, "transform: rotate(0deg);-ms-transform: rotate(0deg);-webkit-transform: rotate(0deg);");
+	$('.' + classListener).attr('data-' + scrollPositionEnd, "transform: rotate("+360+"deg);-ms-transform: rotate("+360+"deg);-webkit-transform: rotate("+360+"deg);");
 }
 
 function linRotateCounter(classListener, classAdd, size, speed, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, color of unit
 
+	$('.' + classListener).addClass(classAdd);
+
+	var unitSize = size * 10;	
+
+	$('.' + classListener).css('height', unitSize+'px');
+	$('.' + classListener).css('width', unitSize+'px');
+	$('.' + classListener).css('background-color', color);
+
+	globalPosition = $('.' + classListener).offset().top - 150;
+
+	var scrollPositionStart = globalPosition;
+
+	var scrollPositionEnd = scrollPositionStart + (speed * 100);
+
+	var sizeInit = $("." + classListener).width();
+
+	$('.' + classListener).attr('data-' + scrollPositionStart, "transform: rotate(0deg);-ms-transform: rotate(0deg);-webkit-transform: rotate(0deg);");
+	$('.' + classListener).attr('data-' + scrollPositionEnd, "transform: rotate(-360deg);-ms-transform: rotate(-360deg);-webkit-transform: rotate(-360deg);");
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
@@ -218,6 +254,10 @@ linTranslateLeft('scr-ani-dot-8', 'scr-ani-square-right', 1, 0.5, 10, '#563D7C')
 linTranslateDown('scr-ani-dot-9', 'scr-ani-circle-right', 2, 1.5, 15, '#ddd');
 
 // linTranslateUp('scr-ani-dot-10', 'scr-ani-square', 4, 1.75, 30, '#6b4346');
+
+linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, '#ddd');
+
+linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 0.75, '#bcd4d4');
 
 skrollr.init({ smoothScrolling: true });
 
