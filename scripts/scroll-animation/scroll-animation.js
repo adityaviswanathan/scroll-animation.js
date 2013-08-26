@@ -241,7 +241,17 @@ function linRotateCounter(classListener, classAdd, size, speed, magnitude, color
 
 function joinAnimations(classListener, classAdd, animationsArray) {
 
-	var animationCount = arguments.length;
+	var animationCount = animationsArray.length;
+
+	for(var k = 0; k < animationCount; k++) {
+		// var cycleEvents;
+		// (cycleEvents = function() {
+		// 	(animationsArray[k].animation + "(" + animationsArray[k].sizeNum + "," + animationsArray[k].speed + "," + animationsArray[k].magnitude)(); //run function
+		// })();
+		eval(animationsArray[k].animation + '("' + arguments[0] + '","' + arguments[1] + '",' + animationsArray[k].sizeNum + ',' + animationsArray[k].speed + ',' + animationsArray[k].magnitude + ',"#bcd4d4"' + ')');
+	}
+
+	// $('.' + classListener).addClass(classAdd);
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
@@ -264,7 +274,9 @@ linTranslateDown('scr-ani-dot-9', 'scr-ani-circle-right', 2, 1.5, 15, '#ddd');
 
 linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
-linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
+// linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
+
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', [{ animation: 'linRotateCounter', sizeNum: 2, speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
