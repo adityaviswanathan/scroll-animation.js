@@ -248,7 +248,14 @@ function joinAnimations(classListener, classAdd, animationsArray) {
 		// (cycleEvents = function() {
 		// 	(animationsArray[k].animation + "(" + animationsArray[k].sizeNum + "," + animationsArray[k].speed + "," + animationsArray[k].magnitude)(); //run function
 		// })();
+		console.log(animationsArray[k].animation + '("' + arguments[0] + '","' + arguments[1] + '",' + animationsArray[k].sizeNum + ',' + animationsArray[k].speed + ',' + animationsArray[k].magnitude + ',"#bcd4d4"' + ')');
 		eval(animationsArray[k].animation + '("' + arguments[0] + '","' + arguments[1] + '",' + animationsArray[k].sizeNum + ',' + animationsArray[k].speed + ',' + animationsArray[k].magnitude + ',"#bcd4d4"' + ')');
+
+		/*TODO:
+			
+		save functions' CSS settings to global object, and then call property of global object in joinAnimations()
+
+		*/
 	}
 
 	// $('.' + classListener).addClass(classAdd);
@@ -276,7 +283,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', [{ animation: 'linRotateCounter', sizeNum: 2, speed: 1.5, magnitude: 2 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', [{ animation: 'linRotateCounter', sizeNum: 2, speed: 1.5, magnitude: 2 }, { animation: 'linGrowthScale', sizeNum: 2, speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
