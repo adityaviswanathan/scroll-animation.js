@@ -38,6 +38,12 @@ linTranslateDown_core.suffix = ['px;'];
 linTranslateUp_core.prop = ['margin-bottom:'];
 linTranslateUp_core.suffix = ['px;'];
 
+linRotateClock_core.prop = ['transform: rotate(', '-ms-transform: rotate(', '-webkit-transform: rotate('];
+linRotateClock_core.suffix = ['deg);', 'deg);', 'deg);'];
+
+linRotateCounter_core.prop = ['transform: rotate(-', '-ms-transform: rotate(-', '-webkit-transform: rotate(-'];
+linRotateCounter_core.suffix = ['deg);', 'deg);', 'deg);'];
+
 console.log(linGrowthScale_core);
 
 function linGrowthHorizontal(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of extension, color of unit
