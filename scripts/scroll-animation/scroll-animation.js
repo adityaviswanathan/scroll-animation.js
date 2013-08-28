@@ -307,6 +307,10 @@ function joinAnimations(classListener, classAdd, size, animationsArray) {
 
 	var magHolder = [];
 
+	var scrollStartString = [];
+
+	var scrollEndString = [];
+
 	for(var k = 0; k < animationCount; k++) {
 		
 		animationHolder.push(animationsArray[k].animation);
@@ -320,6 +324,12 @@ function joinAnimations(classListener, classAdd, size, animationsArray) {
 		save functions' CSS settings to global object, and then call property of global object in joinAnimations()
 
 		*/
+	}
+
+	for(var k = 0; k < animationHolder.length; k++) {
+		var tester = window[animationHolder[k]+"_core.prop"];
+		console.log(animationHolder[k]+"_core.prop");
+
 	}
 
 	console.log(animationHolder);
