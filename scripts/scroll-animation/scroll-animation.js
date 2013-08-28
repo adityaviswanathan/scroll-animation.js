@@ -11,13 +11,32 @@ var linTranslateUp_core = {};
 var linRotateClock_core = {};
 var linRotateCounter_core = {};
 
-linGrowthHorizontal_core.prop = ['width'];
-linGrowthVertical_core.prop = ['height'];
-linGrowthScale_core.prop = ['width','height'];
-linTranslateRight_core.prop = ['margin-left'];
-linTranslateLeft_core.prop = ['margin-right'];
-linTranslateDown_core.prop = ['margin-top'];
-linTranslateUp_core.prop = ['margin-bottom'];
+/* TODO:
+
+	synchronize global data with function-encapsulated property values
+
+*/
+
+linGrowthHorizontal_core.prop = ['width:'];
+linGrowthHorizontal_core.suffix = ['px;'];
+
+linGrowthVertical_core.prop = ['height:'];
+linGrowthVertical_core.suffix = ['px;'];
+
+linGrowthScale_core.prop = ['width:','height:'];
+linGrowthScale_core.suffix = ['px;', 'px;'];
+
+linTranslateRight_core.prop = ['margin-left:'];
+linTranslateRight_core.suffix = ['px;'];
+
+linTranslateLeft_core.prop = ['margin-right:'];
+linTranslateLeft_core.suffix = ['px;'];
+
+linTranslateDown_core.prop = ['margin-top:'];
+linTranslateDown_core.suffix = ['px;'];
+
+linTranslateUp_core.prop = ['margin-bottom:'];
+linTranslateUp_core.suffix = ['px;'];
 
 console.log(linGrowthScale_core);
 
