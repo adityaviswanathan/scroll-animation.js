@@ -1,6 +1,26 @@
 
 var globalPosition = 0;
 
+var linGrowthHorizontal_core = {};
+var linGrowthVertical_core = {};
+var linGrowthScale_core = {};
+var linTranslateRight_core = {};
+var linTranslateLeft_core = {};
+var linTranslateDown_core = {};
+var linTranslateUp_core = {};
+var linRotateClock_core = {};
+var linRotateCounter_core = {};
+
+linGrowthHorizontal_core.prop = ['width'];
+linGrowthVertical_core.prop = ['height'];
+linGrowthScale_core.prop = ['width','height'];
+linTranslateRight_core.prop = ['margin-left'];
+linTranslateLeft_core.prop = ['margin-right'];
+linTranslateDown_core.prop = ['margin-top'];
+linTranslateUp_core.prop = ['margin-bottom'];
+
+console.log(linGrowthScale_core);
+
 function linGrowthHorizontal(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of extension, color of unit
 	
 	$('.' + classListener).addClass(classAdd);
@@ -239,17 +259,36 @@ function linRotateCounter(classListener, classAdd, size, speed, magnitude, color
 	$('.' + classListener).attr('data-' + scrollPositionEnd, "transform: rotate(-" + coefficient + "deg);-ms-transform: rotate(-" + coefficient + "deg);-webkit-transform: rotate(-" + coefficient + "deg);");
 }
 
-function joinAnimations(classListener, classAdd, animationsArray) {
+function joinAnimations(classListener, classAdd, size, animationsArray) {
 
 	var animationCount = animationsArray.length;
 
+	$('.' + classListener).addClass(classAdd);
+
+	var unitSize = size * 10;	
+
+	$('.' + classListener).css('height', unitSize+'px');
+	$('.' + classListener).css('width', unitSize+'px');
+
+	globalPosition = $('.' + classListener).offset().top - 150;
+
+	var scrollPositionStart = globalPosition;
+
+	var scrollPositionEnd = scrollPositionStart + 100;
+
+	var animationHolder = [];
+
+	var speedHolder = [];
+
+	var magHolder = [];
+
 	for(var k = 0; k < animationCount; k++) {
-		// var cycleEvents;
-		// (cycleEvents = function() {
-		// 	(animationsArray[k].animation + "(" + animationsArray[k].sizeNum + "," + animationsArray[k].speed + "," + animationsArray[k].magnitude)(); //run function
-		// })();
-		console.log(animationsArray[k].animation + '("' + arguments[0] + '","' + arguments[1] + '",' + animationsArray[k].sizeNum + ',' + animationsArray[k].speed + ',' + animationsArray[k].magnitude + ',"#bcd4d4"' + ')');
-		eval(animationsArray[k].animation + '("' + arguments[0] + '","' + arguments[1] + '",' + animationsArray[k].sizeNum + ',' + animationsArray[k].speed + ',' + animationsArray[k].magnitude + ',"#bcd4d4"' + ')');
+		
+		animationHolder.push(animationsArray[k].animation);
+
+		speedHolder.push(animationsArray[k].speed);
+
+		magHolder.push(animationsArray[k].magnitude);
 
 		/*TODO:
 			
@@ -258,7 +297,8 @@ function joinAnimations(classListener, classAdd, animationsArray) {
 		*/
 	}
 
-	// $('.' + classListener).addClass(classAdd);
+	console.log(animationHolder);
+	console.log(magHolder);
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
@@ -283,7 +323,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', [{ animation: 'linRotateCounter', sizeNum: 2, speed: 1.5, magnitude: 2 }, { animation: 'linGrowthScale', sizeNum: 2, speed: 1.5, magnitude: 2 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: 'linRotateCounter', speed: 1.5, magnitude: 2 }, { animation: 'linGrowthScale', speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
