@@ -329,6 +329,9 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 	console.log(animationHolder);
 
 	for(var k = 0; k < animationHolder.length; k++) {
+
+		$('.' + classListener).attr('data-', animationsArray[k].animation[0]);
+
 		console.log(animationHolder[k]);
 
 	}
