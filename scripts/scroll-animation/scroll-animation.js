@@ -44,7 +44,7 @@ linRotateClock_core.suffix = ['deg);', 'deg);', 'deg);'];
 linRotateCounter_core.prop = ['transform: rotate(-', '-ms-transform: rotate(-', '-webkit-transform: rotate(-'];
 linRotateCounter_core.suffix = ['deg);', 'deg);', 'deg);'];
 
-console.log(linGrowthScale_core);
+console.log(linGrowthScale_core.prop);
 
 function linGrowthHorizontal(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of extension, color of unit
 	
@@ -319,16 +319,11 @@ function joinAnimations(classListener, classAdd, size, animationsArray) {
 
 		magHolder.push(animationsArray[k].magnitude);
 
-		/*TODO:
-			
-		save functions' CSS settings to global object, and then call property of global object in joinAnimations()
-
-		*/
 	}
 
 	for(var k = 0; k < animationHolder.length; k++) {
-		var tester = window[animationHolder[k]+"_core.prop"];
-		console.log(animationHolder[k]+"_core.prop");
+		var tester = window[animationHolder[k]];
+		console.log(animationHolder[k]);
 
 	}
 
@@ -358,7 +353,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: 'linRotateCounter', speed: 1.5, magnitude: 2 }, { animation: 'linGrowthScale', speed: 1.5, magnitude: 2 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: 'linRotateCounter_core.prop', speed: 1.5, magnitude: 2 }, { animation: 'linGrowthScale_core.prop', speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
