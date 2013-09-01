@@ -281,7 +281,7 @@ function linRotateCounter(classListener, classAdd, size, speed, magnitude, color
 	$('.' + classListener).attr('data-' + scrollPositionEnd, "transform: rotate(-" + coefficient + "deg);-ms-transform: rotate(-" + coefficient + "deg);-webkit-transform: rotate(-" + coefficient + "deg);");
 }
 
-function joinAnimations(classListener, classAdd, size, animationsArray) {
+function joinAnimations(classListener, classAdd, size, animationsArray) { // animation property of animationsArray must be raw text, not string bounded by ""
 
 	var animationCount = animationsArray.length;
 
@@ -312,13 +312,21 @@ function joinAnimations(classListener, classAdd, size, animationsArray) {
 		
 		animationHolder.push(animationsArray[k].animation);
 
+		/* 
+
+		TODO: get correct object property from animationsArray
+
+		*/
+
+		console.log(animationsArray[k].animation[0]);
+
 		speedHolder.push(animationsArray[k].speed);
 
 		magHolder.push(animationsArray[k].magnitude);
 
 	}
 
-	console.log(animationHolder[0]);
+	console.log(animationHolder);
 
 	for(var k = 0; k < animationHolder.length; k++) {
 		console.log(animationHolder[k]);
@@ -348,7 +356,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: 'linRotateCounter_core.prop', speed: 1.5, magnitude: 2 }, { animation: 'linGrowthScale_core.prop', speed: 1.5, magnitude: 2 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linRotateCounter_core.prop, speed: 1.5, magnitude: 2 }, { animation: linGrowthScale_core.prop, speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
