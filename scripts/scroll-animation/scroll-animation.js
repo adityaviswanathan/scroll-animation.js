@@ -44,8 +44,6 @@ linRotateClock_core.suffix = ['deg);', 'deg);', 'deg);'];
 linRotateCounter_core.prop = ['transform: rotate(-', '-ms-transform: rotate(-', '-webkit-transform: rotate(-'];
 linRotateCounter_core.suffix = ['deg);', 'deg);', 'deg);'];
 
-console.log(linGrowthScale_core.prop);
-
 function linGrowthHorizontal(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of extension, color of unit
 	
 	$('.' + classListener).addClass(classAdd);
@@ -125,7 +123,6 @@ function linGrowthScale(classListener, classAdd, size, speed, maxSize, color) { 
 	$('.' + classListener).attr('data-' + scrollPositionStart, "height:" + unitSize + "px; width:" + unitSize + "px;");
 	$('.' + classListener).attr('data-' + scrollPositionEnd, "height:" + doubleSizeSet + "px; width:" + doubleSizeSet + "px;");
 
-	console.log(globalPosition);
 }
 
 function linTranslateRight(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of translation, color of unit
@@ -321,14 +318,12 @@ function joinAnimations(classListener, classAdd, size, animationsArray) {
 
 	}
 
+	console.log(animationHolder[0]);
+
 	for(var k = 0; k < animationHolder.length; k++) {
-		var tester = window[animationHolder[k]];
 		console.log(animationHolder[k]);
 
 	}
-
-	console.log(animationHolder);
-	console.log(magHolder);
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
