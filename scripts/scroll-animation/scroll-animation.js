@@ -330,7 +330,8 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 	for(var k = 0; k < animationHolder.length; k++) {
 
-		$('.' + classListener).attr('data-', animationsArray[k].animation[0]);
+		$('.' + classListener).attr('data-' + scrollPositionStart, animationsArray[k].animation[0] + unitSize + 'px;');
+		
 
 		console.log(animationHolder[k]);
 
