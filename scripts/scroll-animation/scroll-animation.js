@@ -289,8 +289,8 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 	var unitSize = size * 10;	
 
-	$('.' + classListener).css('height', unitSize+'px');
-	$('.' + classListener).css('width', unitSize+'px');
+	$('.' + classListener).css('height', unitSize +'px');
+	$('.' + classListener).css('width', unitSize +'px');
 
 	globalPosition = $('.' + classListener).offset().top - 150;
 
@@ -299,6 +299,8 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 	var scrollPositionEnd = scrollPositionStart + 100;
 
 	var animationHolder = [];
+
+	var suffixHolder = [];
 
 	var speedHolder = [];
 
@@ -311,6 +313,8 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 	for(var k = 0; k < animationCount; k++) {
 		
 		animationHolder.push(animationsArray[k].animation);
+
+		suffixHolder.push(animationsArray[k].suffix);
 
 		/* 
 
@@ -328,15 +332,20 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 	console.log(animationHolder);
 
+	var propSet = '';
+
 	for(var k = 0; k < animationHolder.length; k++) {
 
-		$('.' + classListener).attr('data-' + scrollPositionStart, animationsArray[k].animation[0] + unitSize + 'px;');
-		$('.' + classListener).attr('data-' + scrollPositionEnd, animationsArray[k].animation[0] + unitSize + 'px;');
+		for(var l = 0; l < animationHolder[k].length; l++) {
 
-
-		console.log(animationHolder[k]);
-
+			propSet += animationHolder[k][l] + unitSize + suffixHolder[k][l];
+		}
 	}
+
+	console.log(propSet);
+
+	$('.' + classListener).attr('data-' + scrollPositionStart, propSet);
+	$('.' + classListener).attr('data-' + scrollPositionEnd, propSet);
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
@@ -361,7 +370,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linRotateCounter_core.prop, speed: 1.5, magnitude: 2 }, { animation: linGrowthScale_core.prop, speed: 1.5, magnitude: 2 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linRotateCounter_core.prop, suffix: linRotateCounter_core.suffix, speed: 1.5, magnitude: 2 }, { animation: linGrowthScale_core.prop, suffix: linGrowthScale_core.suffix, speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
