@@ -31,7 +31,6 @@ window.onscroll = function() {
 /* START HOVER EFFECTS FOR CODE SNIPPETS */
 
 $('.effect-listen').hover(function() {
-	console.log('hi');
 	if($(this).hasClass('effect-1')) {
 		colorHold = $('.scr-ani-dot-1').css('background-color');
 		$(this).css('background-color', '#f2f0c9');

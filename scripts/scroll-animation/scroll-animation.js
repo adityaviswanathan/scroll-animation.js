@@ -1,6 +1,8 @@
 
 var globalPosition = 0;
 
+var unitSize;
+
 var linGrowthHorizontal_core = {};
 var linGrowthVertical_core = {};
 var linGrowthScale_core = {};
@@ -19,30 +21,39 @@ var linRotateCounter_core = {};
 
 linGrowthHorizontal_core.prop = ['width:'];
 linGrowthHorizontal_core.suffix = ['px;'];
+linGrowthHorizontal_core.defaults = [unitSize];
 
 linGrowthVertical_core.prop = ['height:'];
 linGrowthVertical_core.suffix = ['px;'];
+linGrowthVertical_core.defaults = [unitSize];
 
 linGrowthScale_core.prop = ['width:','height:'];
 linGrowthScale_core.suffix = ['px;', 'px;'];
+linGrowthScale_core.defaults = [unitSize, unitSize];
 
 linTranslateRight_core.prop = ['margin-left:'];
 linTranslateRight_core.suffix = ['px;'];
+linTranslateRight_core.defaults = [0, 0];
 
 linTranslateLeft_core.prop = ['margin-right:'];
 linTranslateLeft_core.suffix = ['px;'];
+linTranslateLeft_core.defaults = [0, 0];
 
 linTranslateDown_core.prop = ['margin-top:'];
 linTranslateDown_core.suffix = ['px;'];
+linTranslateDown_core.defaults = [0, 0];
 
 linTranslateUp_core.prop = ['margin-bottom:'];
 linTranslateUp_core.suffix = ['px;'];
+linTranslateUp_core.defaults = [0, 0];
 
 linRotateClock_core.prop = ['transform: rotate(', '-ms-transform: rotate(', '-webkit-transform: rotate('];
 linRotateClock_core.suffix = ['deg);', 'deg);', 'deg);'];
+linRotateClock_core.defaults = [0, 0, 0];
 
 linRotateCounter_core.prop = ['transform: rotate(-', '-ms-transform: rotate(-', '-webkit-transform: rotate(-'];
 linRotateCounter_core.suffix = ['deg);', 'deg);', 'deg);'];
+linRotateCounter_core.defaults = [0, 0, 0];
 
 function linGrowthHorizontal(classListener, classAdd, size, speed, distance, color) { //class to apply settings to, class to create (custom), size of unit, low = fast, length of extension, color of unit
 	
@@ -302,6 +313,8 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 	var suffixHolder = [];
 
+	var defaultsHolder = [];
+
 	var speedHolder = [];
 
 	var magHolder = [];
@@ -310,19 +323,17 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 	var scrollEndString = [];
 
+	var startPropSet = '';
+
+	var endPropSet = '';
+
 	for(var k = 0; k < animationCount; k++) {
 		
 		animationHolder.push(animationsArray[k].animation);
 
 		suffixHolder.push(animationsArray[k].suffix);
 
-		/* 
-
-		TODO: get correct object property from animationsArray
-
-		*/
-
-		console.log(animationsArray[k].animation[0]);
+		defaultsHolder.push(animationsArray[k].defaults);
 
 		speedHolder.push(animationsArray[k].speed);
 
@@ -330,22 +341,19 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 	}
 
-	console.log(animationHolder);
-
-	var propSet = '';
-
 	for(var k = 0; k < animationHolder.length; k++) {
 
 		for(var l = 0; l < animationHolder[k].length; l++) {
 
-			propSet += animationHolder[k][l] + unitSize + suffixHolder[k][l];
+			startPropSet += animationHolder[k][l] + defaultsHolder[k][l] + suffixHolder[k][l];
+			endPropSet += animationHolder[k][l] + unitSize + suffixHolder[k][l];
 		}
 	}
 
-	console.log(propSet);
+	console.log(startPropSet);
 
-	$('.' + classListener).attr('data-' + scrollPositionStart, propSet);
-	$('.' + classListener).attr('data-' + scrollPositionEnd, propSet);
+	$('.' + classListener).attr('data-' + scrollPositionStart, startPropSet);
+	$('.' + classListener).attr('data-' + scrollPositionEnd, endPropSet);
 }
 
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
@@ -370,7 +378,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linRotateCounter_core.prop, suffix: linRotateCounter_core.suffix, speed: 1.5, magnitude: 2 }, { animation: linGrowthScale_core.prop, suffix: linGrowthScale_core.suffix, speed: 1.5, magnitude: 2 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linRotateCounter_core.prop, suffix: linRotateCounter_core.suffix, defaults: linRotateCounter_core.defaults, speed: 1.5, magnitude: 2 }, { animation: linGrowthScale_core.prop, suffix: linGrowthScale_core.suffix, defaults: linGrowthScale_core.defaults, speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
