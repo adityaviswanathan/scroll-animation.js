@@ -353,6 +353,18 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 			TODO: call defaultsHolder[k][l] as JS variable
 
 			*/
+			console.log(animationsArray[k]);
+
+			/* PSEUDOCODE
+
+			if(animation == 'linGrowthScale' || ...) {
+	
+			} else {
+				startPropSet += animationHolder[k][l] + defaultsHolder[k][l] + suffixHolder[k][l];
+				...
+			}
+
+			*/
 
 			startPropSet += animationHolder[k][l] + defaultsHolder[k][l] + suffixHolder[k][l];
 			endPropSet += animationHolder[k][l] + unitSize + suffixHolder[k][l];
@@ -361,7 +373,7 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 		$('.' + classListener).attr('data-' + scrollPositionStart, startPropSet);
 		$('.' + classListener).attr('data-' + (scrollPositionStart + (speedHolder[k] * 100)), endPropSet);
 
-		console.log(speedHolder[k]);
+		
 	}
 
 	console.log(startPropSet);	
