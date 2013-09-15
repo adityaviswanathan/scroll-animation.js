@@ -348,32 +348,28 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 		for(var l = 0; l < animationHolder[k].length; l++) {
 
-			/* 
-
-			TODO: call defaultsHolder[k][l] as JS variable
-
-			*/
-			console.log($.inArray('width:', animationsArray[k].animation) == 0);
-
-			console.log(animationsArray[k].magnitude);
-
 			if($.inArray('width:', animationsArray[k].animation) == 0) {
 				startPropSet += animationHolder[k][l] + unitSize + suffixHolder[k][l];
-				endPropSet += animationHolder[k][l] + (unitSize * animationsArray[k].magnitude)+ suffixHolder[k][l];
-				// console.log(unitSize);
+				endPropSet += animationHolder[k][l] + (unitSize * animationsArray[k].magnitude) + suffixHolder[k][l];
 			} else {
 				startPropSet += animationHolder[k][l] + defaultsHolder[k][l] + suffixHolder[k][l];
-				endPropSet += animationHolder[k][l] + unitSize + suffixHolder[k][l];
+				endPropSet += animationHolder[k][l] + (unitSize * animationsArray[k].magnitude) + suffixHolder[k][l];
+				console.log(defaultsHolder[k][l]);
 			}
 		}
 
 		console.log(startPropSet);
 		console.log(endPropSet);
 
+		/* 
+
+		TODO: only first animation is being appended to HTML, need to get both into HTML
+		
+		*/
+
 		$('.' + classListener).attr('data-' + scrollPositionStart, startPropSet);
 		$('.' + classListener).attr('data-' + (scrollPositionStart + (speedHolder[k] * 100)), endPropSet);
 
-		
 	}
 }
 
@@ -399,7 +395,7 @@ linRotateClock('scr-ani-dot-11', 'scr-ani-square', 3, 1.5, 1, '#ddd');
 
 // linRotateCounter('scr-ani-dot-12', 'scr-ani-square-right', 2, 1.25, 5, '#bcd4d4');
 
-joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linRotateCounter_core.prop, suffix: linRotateCounter_core.suffix, defaults: linRotateCounter_core.defaults, speed: 1.5, magnitude: 2 }, { animation: linGrowthScale_core.prop, suffix: linGrowthScale_core.suffix, defaults: linGrowthScale_core.defaults, speed: 1.5, magnitude: 2.5 }]);
+joinAnimations('scr-ani-dot-12', 'scr-ani-square-right', 2, [{ animation: linGrowthScale_core.prop, suffix: linGrowthScale_core.suffix, defaults: linGrowthScale_core.defaults, speed: 1.5, magnitude: 2.5 }, { animation: linRotateCounter_core.prop, suffix: linRotateCounter_core.suffix, defaults: linRotateCounter_core.defaults, speed: 1.5, magnitude: 2 }]);
 
 skrollr.init({ smoothScrolling: true });
 
