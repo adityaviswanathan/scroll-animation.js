@@ -363,7 +363,7 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 
 		/* 
 
-		TODO: only first animation is being appended to HTML, need to get both into HTML
+		TODO: only first animation is being appended to HTML, need to get both into HTML (concatenate strings)
 		
 		*/
 
