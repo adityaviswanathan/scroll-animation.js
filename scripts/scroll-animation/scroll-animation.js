@@ -373,6 +373,12 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 	}
 }
 
+/*****************************************/
+
+/*******   scroll-animation calls  *******/
+
+/*****************************************/
+
 linGrowthHorizontal('scr-ani-dot-1', 'scr-ani-circle', 3, 0.25, 20, '#ddd');
 
 linGrowthHorizontal('scr-ani-dot-2', 'scr-ani-square-right',  0.5, 1, 30, '#333333');
