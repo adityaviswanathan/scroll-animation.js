@@ -340,11 +340,11 @@ function joinAnimations(classListener, classAdd, size, animationsArray) { // ani
 		magHolder.push(animationsArray[k].magnitude);
 	}
 
-	for(var k = 0; k < animationHolder.length; k++) {
+	startPropSet = '';
 
-		startPropSet = '';
+	endPropSet = '';
 
-		endPropSet = '';
+	for(var k = 0; k < animationHolder.length; k++) {		
 
 		for(var l = 0; l < animationHolder[k].length; l++) {
 
